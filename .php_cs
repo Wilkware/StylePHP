@@ -1,8 +1,9 @@
 <?php
 
 $finder = PhpCsFixer\Finder::create()
-    ->exclude('libs/vendor')
-    ->in(__DIR__);
+    ->exclude('tests/stubs')  // exclude the tests-stubs, but not the tests for this module
+    ->notPath('/libs\/.*\//') // regex, exclude only dirs in libs, not the files
+    ->in(__DIR__.'/../');     // fix path to run, __DIR__ point to /.style -> so no checks are running
 
 return PhpCsFixer\Config::create()
     ->setRules([
