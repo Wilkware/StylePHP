@@ -24,10 +24,8 @@ return $config->setRules([
         'blank_line_after_namespace' => true,
         'blank_line_after_opening_tag' => true,
         'blank_line_before_statement' => false,
-        'braces' => [
-            'position_after_anonymous_constructs' => 'next',
-            'position_after_control_structures' => 'same',
-            'position_after_functions_and_oop_constructs' => 'next'
+        'curly_braces_position' => [
+            'control_structures_opening_brace' => 'same_line',
         ],
         'cast_spaces' => true,
         'class_attributes_separation' => false,
@@ -97,7 +95,7 @@ return $config->setRules([
         'no_blank_lines_after_phpdoc' => true,
         'no_blank_lines_before_namespace' => false,
         'no_break_comment' => [
-            'comment_text' => 'FIXME: No break. Add additional comment above this line if intentional!'
+            'comment_text' => 'No break. Add additional comment above this line if intentional!'
         ],
         'no_closing_tag' => true,
         'no_empty_comment' => true,

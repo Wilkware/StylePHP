@@ -5,10 +5,10 @@
     if ($argc == 1) {
         $mode = '';
         $dir = '.';
-    } else if($argc == 2) {
+    } elseif($argc == 2) {
         $mode = $argv[1];
         $dir = '.';
-    } else if($argc == 3) {
+    } elseif($argc == 3) {
         $mode = $argv[1];
         $dir = $argv[2];
     } else {
@@ -35,7 +35,7 @@
         echo PHP_EOL;
     }
 
-    echo 'Checked all files in ' . number_format($duration, 3) . ' seconds, ' . number_format(memory_get_peak_usage() / 1024 / 1024, 3) . " MB memory used" . PHP_EOL;
+    echo 'Checked all files in ' . number_format($duration, 3) . ' seconds, ' . number_format(memory_get_peak_usage() / 1024 / 1024, 3) . ' MB memory used' . PHP_EOL;
 
     if (!empty($invalidFiles)) {
         exit(1);
@@ -43,7 +43,7 @@
 
     function jsonStyleCheck(string $dir, string $mode)
     {
-        $ignore = ['./.vscode', './.idea', './.git','./libs/vendor'];
+        $ignore = ['./.vscode', './.idea', './.git', './libs/vendor'];
         $invalidFiles = [];
         $files = scandir($dir);
         foreach ($files as $file) {
@@ -90,9 +90,9 @@
 
     function writeline($output = '', $newline = true)
     {
-        echo $newline ? ($output.PHP_EOL) : ($output);
+        echo $newline ? ($output . PHP_EOL) : ($output);
     }
-    
+
     function writeStatus($status, $color, $text, $param)
     {
         writeline('   ', false);
@@ -105,14 +105,14 @@
     {
         // pre def escape sequences
         $ESCAPE = [
-            'grey' => "\033[90m",
-            'red' => "\033[91m",
-            'green' => "\033[92m",
+            'grey'   => "\033[90m",
+            'red'    => "\033[91m",
+            'green'  => "\033[92m",
             'yellow' => "\033[93m",
-            'blue' => "\033[94m",
+            'blue'   => "\033[94m",
             'purple' => "\033[95m",
-            'cyan' => "\033[96m",
-            'white' => "\033[97m",
+            'cyan'   => "\033[96m",
+            'white'  => "\033[97m",
         ];
         $ESC = '';
         if ($color != null) {
@@ -125,7 +125,7 @@
             $ESC = '';
             $CLI = '';
         }
-        echo "[" . $ESC . $status . $CLI . "]";
+        echo '[' . $ESC . $status . $CLI . ']';
     }
 
     function isWindows()
