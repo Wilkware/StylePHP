@@ -25,17 +25,17 @@
         {
             "label": "Run Style Check",
             "type": "shell",
-            "command": "php 'php-cs-fixer-v3.phar' fix --config=.style/.php-cs-fixer.php -v --dry-run --allow-risky=yes --path-mode=intersection ."
+            "command": "php 'php-cs-fixer-v3.phar' fix --config=../_ips-styles/.php-cs-fixer.php -v --dry-run --allow-risky=yes --path-mode=intersection ."
         },
         {
             "label": "Run Json Check",
             "type": "shell",
-            "command": "php .style/.php-json-fixer.php"
+            "command": "php ../_ips-styles/.php-json-fixer.php"
         },
         {
             "label": "Run Json Check & Fix",
             "type": "shell",
-            "command": "php .style/.php-json-fixer.php fix"
+            "command": "php ../_ips-styles/.php-json-fixer.php fix"
         }
     ]
 }
