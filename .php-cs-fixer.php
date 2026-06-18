@@ -7,6 +7,7 @@ $finder = PhpCsFixer\Finder::create()
     ->in(getcwd());     // fix path to run, __DIR__ point to /.style -> so no checks are running
 
 return (new PhpCsFixer\Config())->setRules([
+        '@PHP8x2Migration' => true,
         'align_multiline_comment' => [
             'comment_type' => 'all_multiline'
         ],
@@ -177,7 +178,7 @@ return (new PhpCsFixer\Config())->setRules([
         'trailing_comma_in_multiline' => false,
         'trim_array_spaces' => true,
         'unary_operator_spaces' => true,
-        'visibility_required' => true,
+        'modifier_keywords' => true,
         //void_return
         'whitespace_after_comma_in_array' => true,
         //yoda_style
